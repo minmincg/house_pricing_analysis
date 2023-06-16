@@ -9,5 +9,5 @@ We will also build a web page in which we will show different visualizations of 
 - Map of the city in form og heatmap
 - 
 
-###Proposed Visualizations in Tableau
+### Proposed Visualizations in Tableau
 https://public.tableau.com/app/profile/paola.aleman/viz/Project4-Austin/Sheet1?publish=yes
