@@ -1,0 +1,12 @@
+h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#map {
+    height: 1200px;
+}
+
+#title {
+    color: #312820;
+    font-weight:bold;
+}
