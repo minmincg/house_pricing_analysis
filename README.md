@@ -4,7 +4,7 @@ The objective of this project will be to predict house pricing in Austin, TX bas
 We will also build a web page in which we will show different visualizations of the data to observe general trends before going into machine learning predictions. 
 
 ## Website Mock-up
-<img width="1792" alt="Website_MockUp" src="https://github.com/minmincg/house_pricing_analysis/assets/120693588/da12c63b-496c-4a06-9cf1-919cd29a3ceb">
+![image](https://github.com/minmincg/house_pricing_analysis/assets/120423303/43f9b125-c581-4aca-b997-14abd07553b6)
 
 
 ### Visualizations to be considered:
