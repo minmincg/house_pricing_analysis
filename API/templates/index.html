@@ -15,39 +15,96 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3" id="panel">
-        <h1 class="text-center" id="title">Austin TX<br>House Pricing<br>Analysis</h1>
-          <table>
-
-            <tr><td colspan="4">TITLE</td> </tr>
-            <tr> <td>Lastest Price </td> <td colspan="3"> range</td></tr>
-            <tr> <td>Year built </td> <td colspan="3"> range</td></tr>
-            <tr> <td>Lot size  </td> <td colspan="3"> range</td></tr>
-            <tr> <td>Living area</td> <td colspan="3"> range</td></tr>
-            <tr><td colspan="4">OPTIONS</td> </tr>
-            <tr> <td>Zip code</td> <td> <select id="zipcode"></select></td><td>Hometype</td> <td> <select id="hometype"></select></td></tr>
-            <tr> <td>Stories</td> <td> <select id="stories"></select></td><td>Baths</td> <td> <select id="baths"></select></td></tr>
-            <tr> <td>Garage Spaces</td> <td> <select id="garage"></select></td><td>Bedrooms</td> <td> <select id="bedrooms"></select></td></tr>
-            <tr><td colspan="4">AMENITIES</td> </tr>
-            <tr> <td colspan="2"> <input type="checkbox" id="cooling" name="cooling" value="cooling">
-              <label for="cooling"> Cooling</label><br>
-              <input type="checkbox" id="heating" name="heating" value="heating">
-              <label for="heating"> Heating</label><br>
-              <input type="checkbox" id="spa" name="spa" value="spa">
-              <label for="spa"> Has spa</label></td> 
-              <td colspan="2"> <input type="checkbox" id="view" name="view" value="view">
-                <label for="view"> Has view</label><br>
-                <input type="checkbox" id="accessible" name="accessible" value="accessible">
-                <label for="accessible"> Is it accessible?</label><br>
-                <input type="checkbox" id="parking" name="parking" value="parking">
-                <label for="parking"> Has parking?</label></td> </tr>
-
-          </table>
-
-      </div>
-      <div class="col-md-9" id="map"></div>
+    <div class="row border-gray">
+      <h1 class="text-center" id="title">Austin TX<br>House Pricing Analysis</h1>
     </div>
+    <div class="row">
+      <div class="col-md-3 content" id="panel">
+        <form>
+          <table>
+            <tr>
+              <th colspan="4">Filters</th> 
+            </tr>
+            <tr> 
+              <td>Lastest Price </td>
+              <td colspan="3">
+                <label for="pricemin">Min:</label><input type="number" id="pricemin">
+                <label for="pricemax">Max:</label><input type="number" id="pricemax">
+              </td>
+            </tr>
+            <tr>
+              <td>Year built</td>
+              <td colspan="3">
+                <label for="yearmin">Min:</label><input type="number" id="yearmin">
+                <label for="yearmax">Max:</label><input type="number" id="yearmax">
+              </td>
+            </tr>
+            <tr>
+              <td>Lot size</td>
+              <td colspan="3">
+                <label for="lotmin">Min:</label><input type="number" id="lotmin">
+                <label for="lotmax">Max:</label><input type="number" id="lotm">
+              </td>
+            </tr>
+            <tr>
+              <td>Living area</td>
+              <td colspan="3">
+                <label for="livemin">Min:</label><input type="number" id="livemin">
+                <label for="livemax">Max:</label><input type="number" id="livemax">
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4">Options</th>
+            </tr>
+            <tr>
+              <td>Zip code</td>
+              <td><select id="zipcode"></select></td>
+              <td>Hometype</td>
+              <td><select id="homeType"></select></td>
+            </tr>
+            <tr>
+              <td>Stories</td>
+              <td><select id="stories"></select></td>
+              <td>Baths</td>
+              <td><select id="baths"></select></td>
+            </tr>
+            <tr>
+              <td>Garage Spaces</td>
+              <td><select id="garage"></select></td>
+              <td>Bedrooms</td>
+              <td><select id="bedrooms"></select></td>
+            </tr>
+            <tr>
+              <th colspan="4">Amenities</th>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input type="checkbox" id="cooling" name="cooling" value="cooling"><label for="cooling">Cooling</label><br>
+                <input type="checkbox" id="heating" name="heating" value="heating"><label for="heating">Heating</label><br>
+                <input type="checkbox" id="spa" name="spa" value="spa"><label for="spa">Has spa</label>
+              </td> 
+              <td colspan="2"> 
+                <input type="checkbox" id="view" name="view" value="view"><label for="view">Has view</label><br>
+                <input type="checkbox" id="accessible" name="accessible" value="accessible"><label for="accessible">Is accessible</label><br>
+                <input type="checkbox" id="parking" name="parking" value="parking"><label for="parking">Has parking</label>
+              </td> 
+            </tr>
+            <tr>
+            
+              <td colspan="4" class="align-right">
+                <button class="btn" type="button" id="filterGo"><span>Go</span> </button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <button type="button" class="collapsible btn btn-light" id="filterButton" onclick="collapsible();"><span class="glyphicon glyphicon-filter"></span></button>
+      <button type="button" class="collapsible btn btn-light" id="graphButton" onclick="collapsibleGraph();"><span class="glyphicon glyphicon-stats"></span></button>
+      <button type="button" class="collapsible btn btn-light" id="priceButton" onclick="collapsiblePrice();"><span class="glyphicon glyphicon-usd"></span></button>
+      
+      <div class="col-md-12" id="map"></div>
+    </div>
+    
   </div>
   
 
@@ -58,6 +115,7 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./static/js/map.js"></script>
   <script src="./static/js/dropDown.js"></script>
+  <script src="./static/js/collapsible.js"></script>
 
   
 

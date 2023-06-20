@@ -1,15 +1,99 @@
-h1{
+h1, th, label{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+body{
+    color: #2e160f;
+    background-color:#F1F8F9;
+    height:100%;
+}
+
+div.row:first-of-type{
+    border-bottom: 1px solid rgb(179, 179, 179);
+}
+label{
+    margin:0px 5px;
+}
+
+input[type=number]{
+    width:35%;
 }
 
 #map {
-    height: 1200px;
+    height: 100%;
+    position:fixed;
+    padding:0;
 }
 
 #title {
-    color: #312820;
     font-weight:bold;
+    font-size:40px;
 }
-table, th, td {
-    border: 1px solid #000000;
+
+table{
+    width:100%;
+    transition: 0.2s;
+}
+
+th,td{
+    padding:3px;
+    height:46px;
+}
+th{
+    background-color: #489FB5;
+    color:#F1F8F9;
+}
+
+select{
+    width:120px;
+}
+
+.content {
+    padding: 0;
+    width:0;
+    display: block;
+    z-index:1;  
+    overflow:auto;
+    height:100%;
+    background-color:#F1F8F9;
+    transition: 0.5s;
+    box-shadow:3px 3px 5px -2px #2e160f;
   }
+
+
+.align-right{
+    text-align:center;
+}
+
+#filterGo{
+    width:40%;   
+}
+
+#graphButton {
+    position:absolute;
+    top:165px;
+    z-index:9;
+}
+
+#priceButton {
+    position:absolute;
+    top:215px;
+    z-index:9;
+}
+
+#filterButton {
+    position:absolute;
+    top:115px;
+    z-index:9;
+}
+
+.btn{
+    margin:10px;
+    box-shadow: 0px 0px 6px -2px #2e160f;
+    background-color: #FF9985;
+}
+
+.btn:hover{
+    background-color: #ff4824;
+}
