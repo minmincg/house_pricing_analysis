@@ -10,3 +10,6 @@ h1{
     color: #312820;
     font-weight:bold;
 }
+table, th, td {
+    border: 1px solid #000000;
+  }
