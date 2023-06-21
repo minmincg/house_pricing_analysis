@@ -7,6 +7,7 @@ import pandas as pd
 
 # Define app to run api using Flask
 app = Flask(__name__)
+df=pd.read_csv("../Resources/austin_housing_reduced.csv")
 
 # Override chrome's CORS settings to be able to connect two different local ports
 CORS(app)
@@ -22,6 +23,11 @@ def geo():
     with open("../Resources/austin.geojson","r") as file:
         geo=jsonify(json.load(file))
         return geo
+    
+@app.route("/unique/<column>")
+def unique(column):
+    results=df[column].unique().tolist()
+    return jsonify(results)
 
 #Use render_template to return the dashboard HTML site
 @app.route("/endpoint")
