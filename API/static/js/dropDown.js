@@ -10,18 +10,18 @@ function setUp(variable){
     });
 }
 
-function setUpFromList(variable,list){
+function setUpFromList(variable,texts,values){
     d3.select(`select#${variable}`).append('option').attr("value", "All").text("All");
-    list.forEach(one=>{
-        d3.select(`select#${variable}`).append('option').attr("value", one).text(one);
-    })
+    for(let i=0;i<texts.length;i++){
+        d3.select(`select#${variable}`).append('option').attr("value", values[i]).text(texts[i]);
+    }
 }
 
 
 setUp("zipcode");
 setUp("homeType");
-setUpFromList("stories",["1","2","3+"]);
-setUpFromList("baths",["1+","1.5+","2+","3+"]);
-setUpFromList("garage",["1+","2+","3+"]);
-setUpFromList("bedrooms",["1+","2+","3+"]);
+setUpFromList("stories",["One-floor plan"],[1]);
+setUpFromList("baths",["1.5+","2+","3+"],[1.5,2,3]);
+setUpFromList("garage",["1+","2+","3+"],[1,2,3]);
+setUpFromList("bedrooms",["2+","3+"],[2,3]);
 

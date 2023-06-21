@@ -17,7 +17,8 @@ label{
 }
 
 input[type=number]{
-    width:35%;
+    width:30%;
+    text-align:right;
 }
 
 #map {
@@ -37,8 +38,9 @@ table{
 }
 
 th,td{
-    padding:3px;
-    height:46px;
+    padding:0 3px;
+    height:35px;
+    min-width:80px;
 }
 th{
     background-color: #489FB5;
@@ -62,12 +64,12 @@ select{
   }
 
 
-.align-right{
+.align-middle{
     text-align:center;
 }
 
-#filterGo{
-    width:40%;   
+#filterGo,#filterClear{
+    width:80%;   
 }
 
 #graphButton {
@@ -94,6 +96,6 @@ select{
     background-color: #FF9985;
 }
 
-.btn:hover{
+.btn:enabled:hover{
     background-color: #ff4824;
 }
