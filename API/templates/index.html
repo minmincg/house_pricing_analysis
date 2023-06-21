@@ -19,14 +19,13 @@
       <h1 class="text-center" id="title">Austin TX<br>House Pricing Analysis</h1>
     </div>
     <div class="row">
-      <div class="col-md-3" id="filters">
-        <form>
+      <div class="col-md-3 content" id="filters">
           <table>
             <tr>
               <th colspan="4">Filters</th> 
             </tr>
             <tr> 
-              <td>Lastest Price </td>
+              <td>Price </td>
               <td colspan="3">
                 <label for="pricemin">Min:</label><input type="number" id="pricemin">
                 <label for="pricemax">Max:</label><input type="number" id="pricemax">
@@ -40,14 +39,14 @@
               </td>
             </tr>
             <tr>
-              <td>Lot size</td>
+              <td>Lot sqft</td>
               <td colspan="3">
                 <label for="lotmin">Min:</label><input type="number" id="lotmin">
                 <label for="lotmax">Max:</label><input type="number" id="lotm">
               </td>
             </tr>
             <tr>
-              <td>Living area</td>
+              <td>Living sqft</td>
               <td colspan="3">
                 <label for="livemin">Min:</label><input type="number" id="livemin">
                 <label for="livemax">Max:</label><input type="number" id="livemax">
@@ -69,7 +68,7 @@
               <td><select id="baths"></select></td>
             </tr>
             <tr>
-              <td>Garage Spaces</td>
+              <td>Garage</td>
               <td><select id="garage"></select></td>
               <td>Bedrooms</td>
               <td><select id="bedrooms"></select></td>
@@ -79,31 +78,35 @@
             </tr>
             <tr>
               <td colspan="2">
-                <input type="checkbox" id="cooling" name="cooling" value="cooling"><label for="cooling">Cooling</label><br>
-                <input type="checkbox" id="heating" name="heating" value="heating"><label for="heating">Heating</label><br>
-                <input type="checkbox" id="spa" name="spa" value="spa"><label for="spa">Has spa</label>
+                <input type="checkbox" id="cooling" name="cooling" value="cooling"><label for="cooling">Only with Cooling</label><br>
+                <input type="checkbox" id="heating" name="heating" value="heating"><label for="heating">Only with Heating</label><br>
+                <input type="checkbox" id="spa" name="spa" value="spa"><label for="spa">Only with Spa</label>
               </td> 
               <td colspan="2"> 
-                <input type="checkbox" id="view" name="view" value="view"><label for="view">Has view</label><br>
-                <input type="checkbox" id="accessible" name="accessible" value="accessible"><label for="accessible">Is accessible</label><br>
-                <input type="checkbox" id="parking" name="parking" value="parking"><label for="parking">Has parking</label>
+                <input type="checkbox" id="view" name="view" value="view"><label for="view">Only with View</label><br>
+                <input type="checkbox" id="accessible" name="accessible" value="accessible"><label for="accessible">Only Accessible</label><br>
+                <input type="checkbox" id="parking" name="parking" value="parking"><label for="parking">Only with Parking</label>
               </td> 
             </tr>
-            <tr>
-            
-              <td colspan="4" class="align-right">
-                <button class="btn" type="button" id="filterGo"><span>Go</span> </button>
+            <tr>        
+              <td colspan="2" class="align-middle">
+                <button class="btn" type="button" id="filterGo" onclick="filterMap();"><span>Go</span> </button>
+              </td>
+              <td colspan="2" class="align-middle">
+                <button class="btn" type="button" id="filterClear" onclick="clearFilter()" disabled><span>Clear</span> </button>
               </td>
             </tr>
           </table>
-        </form>
+      </div>
+      <div class="col-md-3 content" id="graphs">
+        <p>Texto!</p>
       </div>
       <div class="col-md-3 content" id="predict">
         <p>Texto!</p>
       </div>
-      <button type="button" class="collapsible btn btn-light" id="filterButton" onclick="collapsible();"><span class="glyphicon glyphicon-filter"></span></button>
-      <button type="button" class="collapsible btn btn-light" id="graphButton" onclick="collapsibleGraph();"><span class="glyphicon glyphicon-stats"></span></button>
-      <button type="button" class="collapsible btn btn-light" id="priceButton" onclick="collapsiblePrice();"><span class="glyphicon glyphicon-usd"></span></button>
+      <button type="button" class="collapsible btn btn-light" id="filterButton" onclick="collapsible('filters');"><span class="glyphicon glyphicon-filter"></span></button>
+      <button type="button" class="collapsible btn btn-light" id="graphButton" onclick="collapsible('graphs');"><span class="glyphicon glyphicon-stats"></span></button>
+      <button type="button" class="collapsible btn btn-light" id="priceButton" onclick="collapsible('predict');"><span class="glyphicon glyphicon-usd"></span></button>
       
       <div class="col-md-12" id="map"></div>
     </div>
@@ -115,16 +118,11 @@
     integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
     crossorigin=""></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
   <script src="./static/js/map.js"></script>
   <script src="./static/js/dropDown.js"></script>
   <script src="./static/js/collapsible.js"></script>
-
-  
-
-  <!-- leaflet-choropleth JavaScript
-  <script type="text/javascript" src="/static/js/choropleth.js"></script>
-  -->
+  <script src="./static/js/filter.js"></script>
 
 </body>
 
