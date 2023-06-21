@@ -15,11 +15,11 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row border-gray">
+    <div class="row" id="header">
       <h1 class="text-center" id="title">Austin TX<br>House Pricing Analysis</h1>
     </div>
     <div class="row">
-      <div class="col-md-3 content" id="panel">
+      <div class="col-md-3" id="filters">
         <form>
           <table>
             <tr>
@@ -97,6 +97,9 @@
             </tr>
           </table>
         </form>
+      </div>
+      <div class="col-md-3 content" id="predict">
+        <p>Texto!</p>
       </div>
       <button type="button" class="collapsible btn btn-light" id="filterButton" onclick="collapsible();"><span class="glyphicon glyphicon-filter"></span></button>
       <button type="button" class="collapsible btn btn-light" id="graphButton" onclick="collapsibleGraph();"><span class="glyphicon glyphicon-stats"></span></button>

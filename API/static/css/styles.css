@@ -1,15 +1,15 @@
-h1, th, label{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
-}
-
 body{
     color: #2e160f;
     background-color:#F1F8F9;
     height:100%;
 }
 
-div.row:first-of-type{
+h1, th, label{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+#header{
     border-bottom: 1px solid rgb(179, 179, 179);
 }
 label{

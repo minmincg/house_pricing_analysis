@@ -29,6 +29,13 @@ def unique(column):
     results=df[column].unique().tolist()
     return jsonify(results)
 
+@app.route("/linearModel/")
+def linear():
+    with open("../Resources/linear.json","r") as file:
+        linear=jsonify(json.load(file))
+        return linear
+
+
 #Use render_template to return the dashboard HTML site
 @app.route("/endpoint")
 def endpoint():
