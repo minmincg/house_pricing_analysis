@@ -124,6 +124,15 @@ def linear():
         linear=jsonify(json.load(file))
         return linear
 
+@app.route("/graphs/<variable>")
+def graphs(variable):
+    y=df["latestPrice"].to_list()
+    x=df[variable].to_list()
+    # print(x)
+    # print(y)
+    return jsonify({"y":y, "x":x})
+
+
 
 #Use render_template to return the dashboard HTML site
 @app.route("/endpoint")
