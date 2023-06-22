@@ -10,7 +10,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Read austin housing reduced CSV into df dataFrame
-df=pd.read_csv("../Resources/austin_housing_reduced.csv")
+df=pd.read_csv("../Resources/austin_calculations.csv")
 
 # create geojson from dataframe
 def geo_from_df(data):
@@ -24,22 +24,22 @@ def geo_from_df(data):
                 "properties": {"address":data["streetAddress"].iloc[i],
                                
                                "latestPrice":int(data["latestPrice"].iloc[i]),
-                               "yearBuilt":int(data["yearBuilt"].iloc[i]),
-                               "lotSizeSqFt":int(data["lotSizeSqFt"].iloc[i]),
+                            #    "yearBuilt":int(data["yearBuilt"].iloc[i]),
+                            #    "lotSizeSqFt":int(data["lotSizeSqFt"].iloc[i]),
                                "livingAreaSqFt":int(data["livingAreaSqFt"].iloc[i]),
-                               
                                "zipcode":int(data["zipcode"].iloc[i]),
-                               "numOfStories":int(data["numOfStories"].iloc[i]),
+                            #    "numOfStories":int(data["numOfStories"].iloc[i]),
                                "homeType":data["homeType"].iloc[i],
-                               "garageSpaces":int(data["garageSpaces"].iloc[i]),
+                            #    "garageSpaces":int(data["garageSpaces"].iloc[i]),
                                "numOfBathrooms":int(data["numOfBathrooms"].iloc[i]),
                                "numOfBedrooms":int(data["numOfBedrooms"].iloc[i]),
-                               "numOfAccessibilityFeatures":int(data["numOfAccessibilityFeatures"].iloc[i]),
-                               "hasCooling":bool(data["hasCooling"].iloc[i]),
-                               "hasHeating":bool(data["hasHeating"].iloc[i]),
-                               "hasSpa":bool(data["hasSpa"].iloc[i]),
-                               "hasView":bool(data["hasView"].iloc[i]),
-                               "hasGarage":bool(data["hasGarage"].iloc[i])
+                               "difference_nn":round(float(data["difference_nn"].iloc[i])),
+                               "percent_change_nn":float(data["percent_change_nn"].iloc[i]),
+                               "predict_nn":round(float(data["predict_price_nn"].iloc[i])),
+                               "difference_lr":round(float(data["difference_lr"].iloc[i])),
+                               "percent_change_lr":float(data["percent_change_lr"].iloc[i]),
+                               "predict_lr":round(float(data["predicted_price_lr"].iloc[i])),
+
                               }}
         geo["features"].append(one_feat)
     return geo

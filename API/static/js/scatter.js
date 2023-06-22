@@ -8,7 +8,7 @@ function grapher(data){
 };
 let Layout = {
             title: "titulo whatever",
-            margin: { t: 50, l: 150 ,b:20,r:10},
+            // margin: { t: 50, l: 150 ,b:20,r:10},
             height: 300,
             width: 450,
   //           paper_bgcolor: "rgba(255, 255, 255, 0)",
@@ -16,8 +16,7 @@ let Layout = {
   
         };
 var scatterData = [trace1];
-console.log("si funciona el layout!")
-console.log(scatterData);
+// console.log(scatterData);
 Plotly.newPlot('graphs', scatterData,Layout);
 
 };
@@ -31,26 +30,3 @@ function scatter(independent) {
       
       
 scatter("yearBuilt");
-
-
-    
-//       let barData =[
-//           {
-//               y: communities.reverse(),
-//               x: total_population.reverse(),
-//               hovertext: hover.reverse(),
-//               type: "bar",
-//               marker:{color:"#176F6A"},
-//               // "#D67616","#62AA9F","#176F6A","#AD3A00","#7A2F1E"
-//               orientation: "h",
-//           },
-//       ];
-//        // 2. Create the layout for the bar chart.
-
-//      
-//       // 3. Use Plotly to plot the data with the layout.
-
-//       Plotly.newPlot("bar" , barData , barLayout);
-//   });
-
-// }

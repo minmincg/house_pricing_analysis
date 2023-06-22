@@ -4,6 +4,13 @@ body{
     height:100%;
 }
 
+#map {
+    height: 100%;
+    width:100%;
+    position:fixed;
+    padding:0;
+}
+
 h1, th, label{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
@@ -12,20 +19,24 @@ h1, th, label{
 #header{
     border-bottom: 1px solid rgb(179, 179, 179);
 }
+
+#predict label{
+    min-width:150px;
+}
+
 label{
-    margin:0px 5px;
+    margin:0 8px;
+}
+
+input[type=radio]{
+    margin-left:8px;
 }
 
 input[type=number]{
-    width:30%;
+    width:110px;
     text-align:right;
 }
 
-#map {
-    height: 100%;
-    position:fixed;
-    padding:0;
-}
 
 #title {
     font-weight:bold;
@@ -33,15 +44,23 @@ input[type=number]{
 }
 
 table{
-    width:100%;
+    width:98%;
+    margin-left:1%;
+    margin-right:1%;
+    /* display:inline; */
     transition: 0.2s;
+    padding:10px;
+    /* border:1px solid #2e160f; */
 }
 
 th,td{
     padding:0 3px;
     height:35px;
     min-width:80px;
+    
+    
 }
+
 th{
     background-color: #489FB5;
     color:#F1F8F9;
@@ -56,19 +75,25 @@ select{
     width:0;
     display: block;
     z-index:1;  
-    overflow:auto;
+    overflow:hidden;
     height:100%;
     background-color:#F1F8F9;
-    transition: 0.5s;
+    /* transition: 0.5s; */
     box-shadow:3px 3px 5px -2px #2e160f;
   }
+
+#linear_output{
+    width:100%;
+    font-size:18px;
+    text-align: center;
+}
 
 
 .align-middle{
     text-align:center;
 }
 
-#filterGo,#filterClear{
+#filterGo,#filterClear, #predictLinear{
     width:80%;   
 }
 
@@ -82,6 +107,10 @@ select{
     position:absolute;
     top:215px;
     z-index:9;
+}
+
+.scroller{
+    overflow-y:scroll;
 }
 
 #filterButton {
