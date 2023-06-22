@@ -1,5 +1,6 @@
 function filterMap(){
     let inputsNumbers=document.querySelectorAll("#filters input[type='number']");
+    console.log(inputsNumbers);
     let selects=document.querySelectorAll("#filters select");
     let inputsBinary=document.querySelectorAll("#filters input[type='checkbox']");
     let result=[];

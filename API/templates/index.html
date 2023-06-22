@@ -101,8 +101,45 @@
       <div class="col-md-3 content" id="graphs">
         <p>Texto!</p>
       </div>
+
+
       <div class="col-md-3 content" id="predict">
-        <p>Texto!</p>
+          <label for="propertyTaxRate">Property Tax Rate:</label>
+          <input type="text" id="propertyTaxRate" name="propertyTaxRate"><br>
+          <label for="garageSpaces">Garage Spaces:</label>
+          <input type="text" id="garageSpaces" name="garageSpaces"><br>
+          <label for="numOfAccessibilityFeatures">Number of Accessibility Features:</label>
+          <input type="text" id="numOfAccessibilityFeatures" name="numOfAccessibilityFeatures"><br>
+          <label for="numOfAppliances">Number of Appliances:</label>
+          <input type="text" id="numOfAppliances" name="numOfAppliances"><br>
+          <label for="numOfParkingFeatures">Number of Parking Features:</label>
+          <input type="text" id="numOfParkingFeatures" name="numOfParkingFeatures"><br>
+          <label for="numOfPatioAndPorchFeatures">Number of Patio and Porch Features:</label>
+          <input type="text" id="numOfPatioAndPorchFeatures" name="numOfPatioAndPorchFeatures"><br>
+          <label for="numOfSecurityFeatures">Number of Security Features:</label>
+          <input type="text" id="numOfSecurityFeatures" name="numOfSecurityFeatures"><br>
+          <label for="numOfWaterfrontFeatures">Number of Waterfront Features:</label>
+          <input type="text" id="numOfWaterfrontFeatures" name="numOfWaterfrontFeatures"><br>
+          <label for="numOfWindowFeatures">Number of Window Features:</label>
+          <input type="text" id="numOfWindowFeatures" name="numOfWindowFeatures"><br>
+          <label for="numOfCommunityFeatures">Number of Community Features:</label>
+          <input type="text" id="numOfCommunityFeatures" name="numOfCommunityFeatures"><br>
+          <label for="lotSizeSqFt">Lot Size (sqft):</label>
+          <input type="text" id="lotSizeSqFt" name="lotSizeSqFt"><br>
+          <label for="livingAreaSqFt">Living Area (sqft):</label>
+          <input type="text" id="livingAreaSqFt" name="livingAreaSqFt"><br>
+          <label for="numOfBathrooms">Number of Bathrooms:</label>
+          <input type="text" id="numOfBathrooms" name="numOfBathrooms"><br>
+          <label for="numOfBedrooms">Number of Bedrooms:</label>
+          <input type="text" id="numOfBedrooms" name="numOfBedrooms"><br>
+          <label for="numOfStories">Number of Stories:</label>
+          <input type="text" id="numOfStories" name="numOfStories"><br>
+          <input type="button" onclick="linear();" value="Submit">
+
+        <h2>Predicted Price</h2>
+        <p>${{ sum_result }}</p>
+
+
       </div>
       <button type="button" class="collapsible btn btn-light" id="filterButton" onclick="collapsible('filters');"><span class="glyphicon glyphicon-filter"></span></button>
       <button type="button" class="collapsible btn btn-light" id="graphButton" onclick="collapsible('graphs');"><span class="glyphicon glyphicon-stats"></span></button>
@@ -124,6 +161,7 @@
   <script src="./static/js/collapsible.js"></script>
   <script src="./static/js/filter.js"></script>
   <script src="./static/js/scatter.js"></script>
+  <script src="./static/js/linear.js"></script>
 
 </body>
 
