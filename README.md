@@ -1,18 +1,5 @@
 # Austin house pricing analysis
-## Project Proposal:
-The objective of this project will be to predict house pricing in Austin, TX based on property features like location, size, and ammenities. 
-We will also build a web page in which we will show different visualizations of the data to observe general trends before going into machine learning predictions. 
 
-## Website Mock-up
-![image](https://github.com/minmincg/house_pricing_analysis/assets/120423303/43f9b125-c581-4aca-b997-14abd07553b6)
-
-
-### Visualizations to be considered:
-- Pie chart.
-- Scatter plot for mean price by zip code or neighborhood.
-- Map of the city in form of heatmap.
-  
-
-### Proposed Visualizations in Tableau
-https://public.tableau.com/app/profile/paola.aleman/viz/Project4-Austin/Sheet1?publish=yes
+## Project overview:
+The purpose of this project is to carry out an analysis of the real estate market behavior in Austin, Texas, from 2018 to 2021. Various variables that influence the determination of the sale price will be examined, such as the number of bathrooms, bedrooms, parking spaces, land area, and construction area, among others. This information will be used to predict, through linear regression and neural networks, whether the sale prices were in line with the market. The same machine learning methods will be used to obtain a sale price based on users' input data of their house.
 
