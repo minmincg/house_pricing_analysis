@@ -20,9 +20,9 @@ h1, th, label{
     border-bottom: 1px solid rgb(179, 179, 179);
 }
 
-#predict label{
+/* #predict label{
     min-width:150px;
-}
+} */
 
 label{
     margin:0 8px;
@@ -109,15 +109,16 @@ select{
     z-index:9;
 }
 
-.scroller{
-    overflow-y:scroll;
-}
 
 #filterButton {
     position:absolute;
     top:115px;
     z-index:9;
 }
+
+/* .scroller{
+    overflow-y:scroll;
+} */
 
 .btn{
     margin:10px;

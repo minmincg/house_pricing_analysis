@@ -1,12 +1,18 @@
 
-
-
 function linear(){
     let inputsNumbers=document.querySelectorAll("#predict input[type='number']");
+    let inputsBinary=document.querySelectorAll("#predict input[type='checkbox']");
     // console.log(inputsNumbers);
     let results=[];
     for (let i=0;i<inputsNumbers.length;i++){
         results.push(inputsNumbers[i].value);
+    };
+    for (let i=0;i<inputsBinary.length;i++){
+        if (inputsBinary[i].checked){
+            results.push(1);
+        } else {
+            results.push(0);
+        }
     };
     console.log(results);
     let urlLinear="http://127.0.0.1:5000/linearModel"

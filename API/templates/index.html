@@ -39,14 +39,14 @@
               </td>
             </tr>
             <tr>
-              <td>Lot sqft</td>
+              <td>Lot ft²</td>
               <td colspan="3">
                 <label for="lotmin">Min:</label><input type="number" id="lotmin">
                 <label for="lotmax">Max:</label><input type="number" id="lotm">
               </td>
             </tr>
             <tr>
-              <td>Living sqft</td>
+              <td>Living ft²</td>
               <td colspan="3">
                 <label for="livemin">Min:</label><input type="number" id="livemin">
                 <label for="livemax">Max:</label><input type="number" id="livemax">
@@ -99,7 +99,7 @@
           </table>
       </div>
       <div class="col-md-3 content" id="graphs"></div>
-      <div class="col-md-3 content align-middle" id="predict">
+      <div class="col-md-3 content" id="predict">
         <table class="borders">
           <tr>
             <th colspan="2">Model:</th>
@@ -111,16 +111,15 @@
         </table>
         <div class="scroller">
           <table id="modelContainer"></table>
-        
-        <div id="linear_output"></div>
+          <div id="linear_output"></div>
         </div>
       </div>
     
-
+    
       <button type="button" class="collapsible btn btn-light" id="filterButton" onclick="collapsible('filters');"><span class="glyphicon glyphicon-filter"></span></button>
       <button type="button" class="collapsible btn btn-light" id="graphButton" onclick="collapsible('graphs');"><span class="glyphicon glyphicon-stats"></span></button>
       <button type="button" class="collapsible btn btn-light" id="priceButton" onclick="collapsible('predict');"><span class="glyphicon glyphicon-usd"></span></button>
-      
+
       <div class="col-md-12" id="map"></div>
     </div>
     
