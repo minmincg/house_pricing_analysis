@@ -7,8 +7,9 @@ We will create a visualization in HTML coding with the use of Python Flask, HTML
 
 
 ## Housing database
+The chosen data has been downloaded from Kaggle. The purpose of the dataset is to collect information about the houses that participated in the real estate market in Austin, Texas, in the latest years.
 
-
+There are 46 categories called: City, streetAddress, Zipcode, Latitude, Longitude, propertyTaxRate, garageSpaces, hasAssociation, hasCooling, hasGarage, hasHeating, hasSpa, hasView, homeType, parkingSpaces, yearBuilt, latestPrice, numPriceChanges, latest_saledate, latest_salemonth, latest_saleyear, latestPriceSource, numOfPhotos, numOfAccessibilityFeatures, numOfAppliances,numOfParkingFeatures, numOfPatioAndPorchFeatures, numOfSecurityFeatures, numOfWaterfrontFeatures, numOfWindowFeatures, numOfCommunityFeatures, lotSizeSqFt, livingAreaSqFt, numOfPrimarySchools, numOfElementarySchools, numOfMiddleSchools, numOfHighSchools, avgSchoolDistance, avgSchoolRating, avgSchoolSize, MedianStudentsPerTeacher, numOfBathrooms, numOfBedrooms, numOfStories, homeImage.
 
 ## Finding Data
 For this project we fetch and grabbed the data from /www.kaggle.com/ our data set were retrived form
@@ -18,6 +19,7 @@ https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualization
 ## Data Cleanup and Analysis
 
 ### Exploration and clean up
+The first step was to import the file "austin_housing.csv" to Jupyter Notebook and analyze it in order to be able to select the most relevant variables for the project.
 
 ### Analysis
 
