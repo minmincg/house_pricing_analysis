@@ -5,6 +5,11 @@ The purpose of this project is to carry out an analysis of the real estate marke
 
 We will create a visualization in HTML coding with the use of Python Flask, HTML/CSS and JavaScript.
 
+## Relevant questions:
+* Did I buy my house above or below the market price?
+* Did I sell my house above or below the market price?
+* What is the price at which I could sell my house according to the market?
+
 
 ## Housing database
 The chosen data has been downloaded from Kaggle. The purpose of the dataset is to collect information about the houses that participated in the real estate market in Austin, Texas, in the latest years.
@@ -17,9 +22,12 @@ https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualization
 
 
 ## Data Cleanup and Analysis
-
 ### Exploration and clean up
 The first step was to import the file "austin_housing.csv" to Jupyter Notebook and analyze it in order to be able to select the most relevant variables for the project.
+
+The dataset was filtered to 30 variables, and "numOfSchools" was created as a result of summing the different school levels. All this data was exported to the "austin_housing_reduced.csv" file, which contains these columns and their related information:
+city,	streetAddress,	zipcode, latitude,	longitude,	propertyTaxRate,	garageSpaces,	hasCooling,	hasGarage,	hasHeating,	hasSpa,	hasView,	homeType,	yearBuilt,	latestPrice,	numPriceChanges,	numOfAccessibilityFeatures,	numOfAppliances,	numOfParkingFeatures,	numOfPatioAndPorchFeatures,	numOfSecurityFeatures,	numOfWaterfrontFeatures,	numOfWindowFeatures,	numOfCommunityFeatures,	lotSizeSqFt,	livingAreaSqFt,	avgSchoolRating,	numOfBathrooms,	numOfBedrooms,	numOfStories,	numOfSchools.
+
 
 ### Analysis
 
@@ -32,7 +40,6 @@ The first step was to import the file "austin_housing.csv" to Jupyter Notebook a
 
 
 ## Tools and sources
-
 * Javascript
 * HTML/CSS
 * JSON
@@ -46,7 +53,6 @@ The first step was to import the file "austin_housing.csv" to Jupyter Notebook a
 
 
 ## Authors
-
 * **Maria Jose Cavazos** - **[My github](https://github.com/minmincg "GitHub for Maria Jose Cavazos")**
 * **Paola Aleman** - **[My github](https://github.com/paoaleman19 "GitHub for Pao Aleman")**
 * **Javier Robles** - **[My github](https://github.com/javrobs "GitHub for Javier Robles")**
@@ -58,12 +64,9 @@ The first step was to import the file "austin_housing.csv" to Jupyter Notebook a
 
 
 ## Acknowledgments
-
 Austin Housing - EDA, NLP, Models, Visualizations. (2021). Retrived from https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/input
-##
+
 
 ## Copyright
-
 Copyright:copyright: 2023. All Rights Reserved.
-
 © 2023  Aleman Paola, Javier Robles, Cavazos Maria Jose, César Cruz, BootCamp Tecnologico de Monterrey.
