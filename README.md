@@ -36,7 +36,14 @@ city,	streetAddress,	zipcode, latitude,	longitude,	propertyTaxRate,	garageSpaces
 
 
 ## Visual references:
+1. Leaflet showing information about the selected home.
+<img width="694" alt="image" src="https://github.com/minmincg/house_pricing_analysis/assets/120423303/fb6a4b91-565e-49cd-a1ad-c7d555451d8b">
 
+2. Map filtering.
+<img width="1132" alt="image" src="https://github.com/minmincg/house_pricing_analysis/assets/120423303/fd071903-bdd1-4415-94d9-e5233af04831">
+
+3. Price prediction.
+<img width="448" alt="image" src="https://github.com/minmincg/house_pricing_analysis/assets/120423303/09e1e40b-9149-4eda-b479-916b28862b49">
 
 
 ## Tools and sources
