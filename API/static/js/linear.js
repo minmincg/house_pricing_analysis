@@ -1,5 +1,6 @@
 
 function linear(){
+    
     let inputsNumbers=document.querySelectorAll("#predict input[type='number']");
     let inputsBinary=document.querySelectorAll("#predict input[type='checkbox']");
     // console.log(inputsNumbers);

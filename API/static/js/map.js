@@ -1,7 +1,6 @@
 var map = L.map('map',{zoomControl:false}).setView([30.3077609,-97.7557424],12);
-var markers;
-var markerPin;
-var isUserMarker=false;
+
+
 new L.Control.Zoom({ position: 'topright' }).addTo(map);
 mapQuery();
 
@@ -10,6 +9,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+
+var markers;
 function mapQuery(queries=""){
     let URL_geo;
     if (queries==""){
@@ -24,8 +25,8 @@ function mapQuery(queries=""){
     };
     d3.json(URL_geo).then(data=>{
     let features=data["features"];
-    console.log(features)
     markers=L.layerGroup();
+        console.log(data);
         for (let i=0;i<features.length;i++) {
             let lon=features[i]["geometry"]["coordinates"][0];
             let lat=features[i]["geometry"]["coordinates"][1];
@@ -88,6 +89,9 @@ function mapQuery(queries=""){
     });
 };
 
+
+var markerPin;
+var isUserMarker=false;
 function userPin(lat,lon){
     if (isUserMarker==true){
         map.removeLayer(markerPin);
@@ -101,9 +105,9 @@ function userPin(lat,lon){
         let position = markerPin.getLatLng();
         lat.value=position["lat"];
         lon.value=position["lng"];
-        isUserMarker=true;
     });
     map.addLayer(markerPin);
+    isUserMarker=true;
     };
 }
 
