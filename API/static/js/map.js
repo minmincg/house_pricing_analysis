@@ -98,13 +98,13 @@ function userPin(lat,lon){
         isUserMarker=false;
     };
     if (isUserMarker==false){
-    let start=[30.287235127825305,-97.74227142333984]
+    let start=[30.287235,-97.742271]
     lat.value=start[0];
     lon.value=start[1];
     markerPin=L.marker(start,{draggable:'true'}).bindPopup("Drag me").on("dragend",()=>{
         let position = markerPin.getLatLng();
-        lat.value=position["lat"];
-        lon.value=position["lng"];
+        lat.value=position["lat"].toFixed(6);
+        lon.value=position["lng"].toFixed(6);
     });
     map.addLayer(markerPin);
     isUserMarker=true;

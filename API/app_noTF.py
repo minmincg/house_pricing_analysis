@@ -4,8 +4,7 @@ from flask_cors import CORS
 from flask import render_template
 import json
 import pandas as pd
-import tensorflow as tf
-from joblib import load
+# import tensorflow as tf
 
 # Define app to run api using Flask
 app = Flask(__name__)
@@ -13,9 +12,6 @@ app = Flask(__name__)
 # Read austin housing reduced CSV into df dataFrame
 df=pd.read_csv("../Resources/austin_calculations.csv")
 
-# Load scaler and neural network
-scaler = load('../Resources/nn/std_scaler.bin')
-nnmodel= tf.keras.models.load_model("../Resources/nn/neural_network.h5")
 # create geojson from dataframe
 def geo_from_df(data):
     geo={"type": "FeatureCollection","features": []}
@@ -72,6 +68,7 @@ def geo():
     
 @app.route("/geoquery/<query>")
 def geoquery(query):
+    print(query)
     query_list=query.split("_")
     query_list.pop(-1)
     index_list=["latestPrice","latestPrice","yearBuilt","yearBuilt","lotSizeSqFt","lotSizeSqFt","livingAreaSqFt","livingAreaSqFt",
@@ -123,29 +120,8 @@ def unique(column):
 
 @app.route("/nn/<query>")
 def nn(query):
-    query_list=query.split("_")
-    query_list.pop(-1)
-    query_list
-    for i,query in enumerate(query_list):
-        if query=="":
-            query_list[i]=0
-        query_list[i]=float(query_list[i])
-    zips=['78702','78703','78704','78717','78721',
- '78723','78724','78727','78728','78729',
- '78730','78731','78732','78733','78735',
- '78737','78739','78741','78744','78745',
- '78747','78748','78749','78750','78753',
- '78754','78757','78758','78759','Other']
-    zipcode=query_list[2]
-    if (zipcode in zips)==False:
-        zipcode="Other"
-    zipcode_index=zips.index(zipcode)
-    zipcode_dummy=[0]*zipcode_index+[1]+[0]*(len(zips)-1-zipcode_index)
-    query_list.pop(2)
-    query_list=query_list+zipcode_dummy
-    scaled_data=scaler.transform([query_list])
-    price=nnmodel.predict(scaled_data)
-    return jsonify([float(price[0][0])])
+    print(query)
+    return jsonify([1000000])
 
 @app.route("/linearModel")
 def linear():

@@ -20,36 +20,36 @@
     </div>
     <div class="row">
       <div class="col-md-3 content" id="filters">
-          <table>
+          <table id="filtersContent">
             <tr>
               <th colspan="4">Filters</th> 
             </tr>
             <tr> 
               <td>Price </td>
-              <td colspan="3">
-                <label for="pricemin">Min:</label><input type="number" id="pricemin">
-                <label for="pricemax">Max:</label><input type="number" id="pricemax">
+              <td colspan="3" class="align-middle">
+                <label for="pricemin_flt">Min:</label><input type="number" id="pricemin_flt">
+                <label for="pricemax_flt">Max:</label><input type="number" id="pricemax_flt">
               </td>
             </tr>
             <tr>
               <td>Year built</td>
-              <td colspan="3">
-                <label for="yearmin">Min:</label><input type="number" id="yearmin">
-                <label for="yearmax">Max:</label><input type="number" id="yearmax">
+              <td colspan="3" class="align-middle">
+                <label for="yearmin_flt">Min:</label><input type="number" id="yearmin_flt">
+                <label for="yearmax_flt">Max:</label><input type="number" id="yearmax_flt">
               </td>
             </tr>
             <tr>
               <td>Lot ft²</td>
-              <td colspan="3">
-                <label for="lotmin">Min:</label><input type="number" id="lotmin">
-                <label for="lotmax">Max:</label><input type="number" id="lotm">
+              <td colspan="3" class="align-middle">
+                <label for="lotmin_flt">Min:</label><input type="number" id="lotmin_flt">
+                <label for="lotmax_flt">Max:</label><input type="number" id="lotm_flt">
               </td>
             </tr>
             <tr>
               <td>Living ft²</td>
-              <td colspan="3">
-                <label for="livemin">Min:</label><input type="number" id="livemin">
-                <label for="livemax">Max:</label><input type="number" id="livemax">
+              <td colspan="3" class="align-middle">
+                <label for="livemin_flt">Min:</label><input type="number" id="livemin_flt">
+                <label for="livemax_flt">Max:</label><input type="number" id="livemax_flt">
               </td>
             </tr>
             <tr>
@@ -57,35 +57,35 @@
             </tr>
             <tr>
               <td>Zip code</td>
-              <td><select id="zipcode"></select></td>
+              <td><select id="zipcode_flt"><option value="All">All</option></select></td>
               <td>Hometype</td>
-              <td><select id="homeType"></select></td>
+              <td><select id="homeType_flt"><option value="All">All</option></select></td>
             </tr>
             <tr>
               <td>Stories</td>
-              <td><select id="stories"></select></td>
+              <td><select id="stories_flt"><option value="All">All</option></select></td>
               <td>Baths</td>
-              <td><select id="baths"></select></td>
+              <td><select id="baths_flt"><option value="All">All</option></select></td>
             </tr>
             <tr>
               <td>Garage</td>
-              <td><select id="garage"></select></td>
+              <td><select id="garage_flt"><option value="All">All</option></select></td>
               <td>Bedrooms</td>
-              <td><select id="bedrooms"></select></td>
+              <td><select id="bedrooms_flt"><option value="All">All</option></select></td>
             </tr>
             <tr>
               <th colspan="4">Amenities</th>
             </tr>
             <tr>
               <td colspan="2">
-                <input type="checkbox" id="cooling" name="cooling" value="cooling"><label for="cooling">Only with Cooling</label><br>
-                <input type="checkbox" id="heating" name="heating" value="heating"><label for="heating">Only with Heating</label><br>
-                <input type="checkbox" id="spa" name="spa" value="spa"><label for="spa">Only with Spa</label>
+                <input type="checkbox" id="cooling_flt" name="cooling" value="cooling"><label for="cooling_flt">Only with Cooling</label><br>
+                <input type="checkbox" id="heating_flt" name="heating" value="heating"><label for="heating_flt">Only with Heating</label><br>
+                <input type="checkbox" id="spa_flt" name="spa" value="spa"><label for="spa_flt">Only with Spa</label>
               </td> 
               <td colspan="2"> 
-                <input type="checkbox" id="view" name="view" value="view"><label for="view">Only with View</label><br>
-                <input type="checkbox" id="accessible" name="accessible" value="accessible"><label for="accessible">Only Accessible</label><br>
-                <input type="checkbox" id="parking" name="parking" value="parking"><label for="parking">Only with Parking</label>
+                <input type="checkbox" id="view_flt" name="view" value="view"><label for="view_flt">Only with View</label><br>
+                <input type="checkbox" id="accessible_flt" name="accessible" value="accessible"><label for="accessible_flt">Only Accessible</label><br>
+                <input type="checkbox" id="parking_flt" name="parking" value="parking"><label for="parking_flt">Only with Parking</label>
               </td> 
             </tr>
             <tr>        
@@ -137,6 +137,7 @@
   <script src="./static/js/filter.js"></script>
   <script src="./static/js/scatter.js"></script>
   <script src="./static/js/linear.js"></script>
+  <script src="./static/js/nn.js"></script>
   <script src="./static/js/predictPopulate.js"></script>
   <script src="./static/js/tableMakers.js"></script>
   
