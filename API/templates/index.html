@@ -98,14 +98,31 @@
             </tr>
           </table>
       </div>
-      <div class="col-md-3 content" id="graphs"></div>
-      <div class="col-md-3 content" id="predict">
-        <table class="borders">
+      <div class="col-md-3 content" id="graphs">
+        <table>
           <tr>
-            <th colspan="2">Model:</th>
+            <th colspan="2">Grapher</th>
+          </tr>
+      </table>
+      <table id="variablesGraphs">
+          <tr id="variableRow">
+              <td>
+                  Independent variable: <select id="iVariable1"></select>
+              </td>
+              <td class="align-middle">
+                  <button class="btn" type="button" id="graphGo" onclick="scatter();" style="width:130px">Graph</button>
+              </td>
+          </tr>
+      </table>
+        <div id="graphContainer"></div>
+      </div>
+      <div class="col-md-3 content" id="predict">
+        <table>
+          <tr>
+            <th colspan="2">Predict Price</th>
           </tr>
           <tr>
-            <td><input type="radio" name="model" onclick="modelLinear();"><label>Linear</label></td>
+            <td><input type="radio" name="model" onclick="modelLinear();" checked><label>Linear</label></td>
             <td><input type="radio" name="model" onclick="modelNN();"><label>Neural Network</label></td>
           </tr>
         </table>
@@ -138,8 +155,9 @@
   <script src="./static/js/scatter.js"></script>
   <script src="./static/js/linear.js"></script>
   <script src="./static/js/nn.js"></script>
-  <script src="./static/js/predictPopulate.js"></script>
   <script src="./static/js/tableMakers.js"></script>
+  <script src="./static/js/predictPopulate.js"></script>
+  
   
 
 </body>

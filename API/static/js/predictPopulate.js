@@ -1,3 +1,5 @@
+modelLinear();
+
 function modelLinear(){
     isNNShowing=false
     let table=document.querySelector("#modelContainer");
@@ -69,4 +71,5 @@ function modelNN(){
     userPin(lat,lon);
     
 }
+
 

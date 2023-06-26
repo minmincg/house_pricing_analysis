@@ -24,13 +24,11 @@ function linear() {
     d3.json(urlLinear).then(data => {
         let coef = data.coefficients;
         let intercept = data.intercept;
-        console.log({ "Coefficient": coef, "Intercept": intercept });
         let price = 0;
         for (let i = 0; i < results.length; i++) {
             price = price + Number(results[i]) * coef[i];
         };
         price += intercept;
-        console.log(price);
         price = Math.round(price).toLocaleString("en-US");
         if (isLinearShowing == false) {
             let table = document.querySelector("#modelContainer");

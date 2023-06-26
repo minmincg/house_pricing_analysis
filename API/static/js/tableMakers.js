@@ -15,11 +15,6 @@ function tableMakerBinary(section,title,ids,labels,suffix){
         row.appendChild(cell);
     }
     table.appendChild(row);
-    // let calcbut=document.createElement("tr");
-    // calcbut.innerHTML=`<td colspan="4" class="align-middle">
-    //                 <button type="button" class="btn" onclick="linear();" id="predictLinear">Submit</button>
-    //                 </td>`
-    // table.appendChild(calcbut);
 }
 
 function tableMakerInput(section,title,ids,labels,types,suffix){

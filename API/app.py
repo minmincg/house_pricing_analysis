@@ -155,18 +155,41 @@ def linear():
 
 @app.route("/graphs/<variable>")
 def graphs(variable):
-    y=df["latestPrice"].to_list()
+    og_price=df["latestPrice"].to_list()
+    lr_price=df["predicted_price_lr"].to_list()
+    nn_price=df["predict_price_nn"].to_list()
     x=df[variable].to_list()
     # print(x)
     # print(y)
-    return jsonify({"y":y, "x":x})
+    return jsonify({"og_price":og_price,
+                    "nn_price":nn_price,
+                    "lr_price":lr_price,
+                    "x":x})
 
+@app.route("/graphs/<variable>/<variable2>")
+def graphs3D(variable,variable2):
+    og_price=df["latestPrice"].to_list()
+    lr_price=df["predicted_price_lr"].to_list()
+    nn_price=df["predict_price_nn"].to_list()
+    y=df[variable2].to_list()
+    x=df[variable].to_list()
+    # print(x)
+    # print(y)
+    return jsonify({"y":y, 
+                    "x":x,
+                    "og_price":og_price,
+                    "nn_price":nn_price,
+                    "lr_price":lr_price})
 
 
 #Use render_template to return the dashboard HTML site
 @app.route("/endpoint")
 def endpoint():
     return (render_template('index.html'))
+
+@app.route("/graph_only")
+def deletethis():
+    return (render_template('graph.html'))
         
 #Run app code
 if __name__=="__main__":

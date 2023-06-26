@@ -43,7 +43,7 @@ function mapQuery(queries=""){
             <span style="color:#16697A;font-size:18px;font-weight:bold">${properties["address"]}, ${properties["zipcode"]}</span><br>
             <span style="color:#16697A;font-size:14px;font-weight:bold">$${properties["latestPrice"].toLocaleString("en-US")}</span><br>
             
-            ${properties["numOfBedrooms"]} bd, ${properties["numOfBedrooms"]} ba,
+            ${properties["numOfBedrooms"]} bd, ${properties["numOfBathrooms"]} ba,
             ${properties["livingAreaSqFt"].toLocaleString("en-US")}ft²<br>
             ${marketvalue}
             </div>
