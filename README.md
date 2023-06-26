@@ -1,5 +1,11 @@
 # Austin house pricing analysis
 
+## Authors
+* **Maria Jose Cavazos** - **[My github](https://github.com/minmincg "GitHub for Maria Jose Cavazos")**
+* **Paola Aleman** - **[My github](https://github.com/paoaleman19 "GitHub for Pao Aleman")**
+* **Javier Robles** - **[My github](https://github.com/javrobs "GitHub for Javier Robles")**
+* **Cesar Cruz** - **[My github](https://github.com/CsarCruz "GitHub for Cesar Cruz")**
+  
 ## Project overview:
 The purpose of this project is to carry out an analysis of the real estate market behavior in Austin, Texas, from 2018 to 2021. Various variables that influence the determination of the sale price will be examined, such as the number of bathrooms, bedrooms, parking spaces, land area, and construction area, among others. This information will be used to predict, through linear regression and neural networks, whether the sale prices were in line with the market. The same machine learning methods will be used to obtain a sale price based on users' input data of their house.
 
@@ -29,14 +35,27 @@ The dataset was filtered to 30 variables, and "numOfSchools" was created as a re
 city,	streetAddress,	zipcode, latitude,	longitude,	propertyTaxRate,	garageSpaces,	hasCooling,	hasGarage,	hasHeating,	hasSpa,	hasView,	homeType,	yearBuilt,	latestPrice,	numPriceChanges,	numOfAccessibilityFeatures,	numOfAppliances,	numOfParkingFeatures,	numOfPatioAndPorchFeatures,	numOfSecurityFeatures,	numOfWaterfrontFeatures,	numOfWindowFeatures,	numOfCommunityFeatures,	lotSizeSqFt,	livingAreaSqFt,	avgSchoolRating,	numOfBathrooms,	numOfBedrooms,	numOfStories,	numOfSchools.
 
 
-### Analysis
+### Project Development
+The Austin House Pricing Project utilized Flask to develop a web application consisting of app.py, index.html, and JavaScript files. The primary objective of this project was to display a map using Leaflet, showcasing information about houses sold between 2018 and 2021.
 
-### Dashboard
+To enhance the functionality, machine learning techniques were employed. Both linear regression and neural networks were utilized to predict house prices based on user input.
 
+The Flask application seamlessly integrated the machine learning models, enabling users to input specific parameters related to the house they were interested in. The models would then provide an estimated price based on the given inputs, utilizing the predictive capabilities of the trained models.
+
+Overall, the project combined web development, data visualization, and machine learning techniques to create an interactive platform that empowered users to explore and obtain estimated prices for houses in Austin, Texas.
 
 
 ## Visual references:
+1. Leaflet showing information about the selected home.
+<img width="448" alt="image" src="https://github.com/minmincg/house_pricing_analysis/assets/120423303/fb6a4b91-565e-49cd-a1ad-c7d555451d8b">
 
+
+3. Map filtering.
+<img width="448" alt="image" src="https://github.com/minmincg/house_pricing_analysis/assets/120423303/fd071903-bdd1-4415-94d9-e5233af04831">
+
+
+5. Price prediction.
+<img width="448" alt="image" src="https://github.com/minmincg/house_pricing_analysis/assets/120423303/09e1e40b-9149-4eda-b479-916b28862b49">
 
 
 ## Tools and sources
@@ -50,13 +69,6 @@ city,	streetAddress,	zipcode, latitude,	longitude,	propertyTaxRate,	garageSpaces
 * Jupyter Notebook
 * CORS
 * LiveServer JS
-
-
-## Authors
-* **Maria Jose Cavazos** - **[My github](https://github.com/minmincg "GitHub for Maria Jose Cavazos")**
-* **Paola Aleman** - **[My github](https://github.com/paoaleman19 "GitHub for Pao Aleman")**
-* **Javier Robles** - **[My github](https://github.com/javrobs "GitHub for Javier Robles")**
-* **Cesar Cruz** - **[My github](https://github.com/CsarCruz "GitHub for Cesar Cruz")**
 
 
 ## Conclusions
