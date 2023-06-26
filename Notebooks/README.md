@@ -1,3 +1,4 @@
+# NOTEBOOKS
 In this folder we stored the jupyter notebooks used to test the different functions that we weren't a 100% sure of how they would react. 
 We used the following folders for different tasks to solve:
     - data_preprocessing.ipynb: Used this file to play around with the data we found to observe what different things we could do to use as observations.
