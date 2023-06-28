@@ -27,24 +27,15 @@ def geo_from_df(data):
                     },
                 "properties": {"address":data["streetAddress"].iloc[i],
                                
-                               "latestPrice":int(data["latestPrice"].iloc[i]),
-                            #    "yearBuilt":int(data["yearBuilt"].iloc[i]),
-                            #    "lotSizeSqFt":int(data["lotSizeSqFt"].iloc[i]),
-                               "livingAreaSqFt":int(data["livingAreaSqFt"].iloc[i]),
-                               "zipcode":int(data["zipcode"].iloc[i]),
-                            #    "numOfStories":int(data["numOfStories"].iloc[i]),
-                               "homeType":data["homeType"].iloc[i],
-                            #    "garageSpaces":int(data["garageSpaces"].iloc[i]),
-                               "numOfBathrooms":int(data["numOfBathrooms"].iloc[i]),
-                               "numOfBedrooms":int(data["numOfBedrooms"].iloc[i]),
-                               "difference_nn":round(float(data["difference_nn"].iloc[i])),
-                               "percent_change_nn":float(data["percent_change_nn"].iloc[i]),
-                               "predict_nn":round(float(data["predict_price_nn"].iloc[i])),
-                               "difference_lr":round(float(data["difference_lr"].iloc[i])),
-                               "percent_change_lr":float(data["percent_change_lr"].iloc[i]),
-                               "predict_lr":round(float(data["predicted_price_lr"].iloc[i])),
-
-                              }}
+                            "latestPrice":int(data["latestPrice"].iloc[i]),
+                            "livingAreaSqFt":int(data["livingAreaSqFt"].iloc[i]),
+                            "zipcode":int(data["zipcode"].iloc[i]),
+                            "numOfBathrooms":int(data["numOfBathrooms"].iloc[i]),
+                            "numOfBedrooms":int(data["numOfBedrooms"].iloc[i]),
+                            "difference_nn":round(float(data["difference_nn"].iloc[i])),
+                            "percent_change_nn":float(data["percent_change_nn"].iloc[i]),
+                            "predict_nn":round(float(data["predict_price_nn"].iloc[i])),
+                            }}
         geo["features"].append(one_feat)
     return geo
 
@@ -119,6 +110,7 @@ def geoquery(query):
 @app.route("/unique/<column>")
 def unique(column):
     results=df[column].unique().tolist()
+    results.sort()
     return jsonify(results)
 
 @app.route("/nn/<query>")
@@ -126,16 +118,16 @@ def nn(query):
     query_list=query.split("_")
     query_list.pop(-1)
     query_list
-    for i,query in enumerate(query_list):
-        if query=="":
+    for i,each in enumerate(query_list):
+        if each=="":
             query_list[i]=0
         query_list[i]=float(query_list[i])
-    zips=['78702','78703','78704','78717','78721',
- '78723','78724','78727','78728','78729',
- '78730','78731','78732','78733','78735',
- '78737','78739','78741','78744','78745',
- '78747','78748','78749','78750','78753',
- '78754','78757','78758','78759','Other']
+    zips=[78702,78703,78704,78717,78721,
+        78723,78724,78727,78728,78729,
+        78730,78731,78732,78733,78735,
+        78737,78739,78741,78744,78745,
+        78747,78748,78749,78750,78753,
+        78754,78757,78758,78759,'Other']
     zipcode=query_list[2]
     if (zipcode in zips)==False:
         zipcode="Other"
