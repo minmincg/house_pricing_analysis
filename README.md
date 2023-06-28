@@ -50,12 +50,15 @@ Overall, the project combined web development, data visualization, and machine l
 <img width="448" alt="image" src="https://github.com/minmincg/house_pricing_analysis/assets/120423303/fb6a4b91-565e-49cd-a1ad-c7d555451d8b">
 
 
-3. Map filtering.
+2. Map filtering.
 <img width="448" alt="image" src="https://github.com/minmincg/house_pricing_analysis/assets/120423303/fd071903-bdd1-4415-94d9-e5233af04831">
 
 
-5. Price prediction.
+3. Price prediction.
 <img width="448" alt="image" src="https://github.com/minmincg/house_pricing_analysis/assets/120423303/09e1e40b-9149-4eda-b479-916b28862b49">
+
+4. Graphs.
+<img width="448" alt="image" src="https://github.com/minmincg/house_pricing_analysis/assets/120423303/67ad4d82-9e79-4d35-940a-bce6d59511f5">
 
 
 ## Tools and sources
@@ -72,7 +75,10 @@ Overall, the project combined web development, data visualization, and machine l
 
 
 ## Conclusions
-
+* The model that best fits our data set was the neural networks model based on the MAE (Mean Average Error), which had a lower value.
+* The linear regression model don´t take into consideration relevant fields like zipcode and year of construction.
+* Categorized the predicted price values into good, bad and neutral by comparing it to the listed price.
+* Offered different options for user to display visualizations comparing both models.  
 
 
 ## Acknowledgments
