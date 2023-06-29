@@ -1,7 +1,7 @@
 # Austin house pricing analysis
 
 ## Authors
-* **Maria Jose Cavazos** - **[My github](https://github.com/minmincg "GitHub for Maria Jose Cavazos")**
+* **Marijose Cavazos** - **[My github](https://github.com/minmincg "GitHub for Marijose Cavazos")**
 * **Paola Aleman** - **[My github](https://github.com/paoaleman19 "GitHub for Pao Aleman")**
 * **Javier Robles** - **[My github](https://github.com/javrobs "GitHub for Javier Robles")**
 * **Cesar Cruz** - **[My github](https://github.com/CsarCruz "GitHub for Cesar Cruz")**
