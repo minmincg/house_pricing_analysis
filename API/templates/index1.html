@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Austin Housing Prices</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./static/css/styles.css" /> 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row" id="header">
+      <h1 class="text-center" id="title">Austin TX<br>House Pricing Analysis</h1>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 menu">
+        <div class="content" id="filters">
+          <table id="filtersContent">
+            <tr>
+              <th colspan="4">Filters</th> 
+            </tr>
+            <tr> 
+              <td>Price </td>
+              <td colspan="3" class="align-middle">
+                <label for="pricemin_flt">Min:</label><input type="number" id="pricemin_flt">
+                <label for="pricemax_flt">Max:</label><input type="number" id="pricemax_flt">
+              </td>
+            </tr>
+            <tr>
+              <td>Year built</td>
+              <td colspan="3" class="align-middle">
+                <label for="yearmin_flt">Min:</label><input type="number" id="yearmin_flt">
+                <label for="yearmax_flt">Max:</label><input type="number" id="yearmax_flt">
+              </td>
+            </tr>
+            <tr>
+              <td>Lot ft²</td>
+              <td colspan="3" class="align-middle">
+                <label for="lotmin_flt">Min:</label><input type="number" id="lotmin_flt">
+                <label for="lotmax_flt">Max:</label><input type="number" id="lotm_flt">
+              </td>
+            </tr>
+            <tr>
+              <td>Living ft²</td>
+              <td colspan="3" class="align-middle">
+                <label for="livemin_flt">Min:</label><input type="number" id="livemin_flt">
+                <label for="livemax_flt">Max:</label><input type="number" id="livemax_flt">
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4">Options</th>
+            </tr>
+            <tr>
+              <td>Zip code</td>
+              <td><select id="zipcode_flt"><option value="All">All</option></select></td>
+              <td>Hometype</td>
+              <td><select id="homeType_flt"><option value="All">All</option></select></td>
+            </tr>
+            <tr>
+              <td>Stories</td>
+              <td><select id="stories_flt"><option value="All">All</option></select></td>
+              <td>Baths</td>
+              <td><select id="baths_flt"><option value="All">All</option></select></td>
+            </tr>
+            <tr>
+              <td>Garage</td>
+              <td><select id="garage_flt"><option value="All">All</option></select></td>
+              <td>Bedrooms</td>
+              <td><select id="bedrooms_flt"><option value="All">All</option></select></td>
+            </tr>
+            <tr>
+              <th colspan="4">Amenities</th>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input type="checkbox" id="cooling_flt" name="cooling" value="cooling"><label for="cooling_flt">Only with Cooling</label><br>
+                <input type="checkbox" id="heating_flt" name="heating" value="heating"><label for="heating_flt">Only with Heating</label><br>
+                <input type="checkbox" id="spa_flt" name="spa" value="spa"><label for="spa_flt">Only with Spa</label>
+              </td> 
+              <td colspan="2"> 
+                <input type="checkbox" id="view_flt" name="view" value="view"><label for="view_flt">Only with View</label><br>
+                <input type="checkbox" id="accessible_flt" name="accessible" value="accessible"><label for="accessible_flt">Only Accessible</label><br>
+                <input type="checkbox" id="parking_flt" name="parking" value="parking"><label for="parking_flt">Only with Parking</label>
+              </td> 
+            </tr>
+            <tr>        
+              <td colspan="2" class="align-middle">
+                <button class="btn btn-submit" type="button" id="filterGo" onclick="filterMap();"><span>Go</span> </button>
+              </td>
+              <td colspan="2" class="align-middle">
+                <button class="btn btn-submit" type="button" id="filterClear" onclick="clearFilter()" disabled><span>Clear</span> </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="content" id="graphs">
+          <table>
+          <tr>
+            <th colspan="2">Grapher</th>
+          </tr>
+          </table>
+          <table id="variablesGraphs">
+            <tr id="variableRow">
+              <td>
+                  Independent variable: <select id="iVariable1"></select>
+              </td>
+              <td class="align-middle">
+                  <button class="btn" type="button" id="graphGo" onclick="scatter();" style="width:130px">Graph</button>
+              </td>
+            </tr>
+          </table>
+        <div id="graphContainer"></div>
+        </div>
+        <div class="content" id="predict">
+          <table>
+            <tr>
+              <th colspan="2">Predict Price</th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="model" onclick="modelLinear();" checked><label>Linear</label></td>
+              <td><input type="radio" name="model" onclick="modelNN();"><label>Neural Network</label></td>
+            </tr>
+          </table>
+          <div class="scroller">
+            <table id="modelContainer"></table>
+            <div id="linear_output"></div>
+          </div>
+        </div>
+        <div id="widget-bar">
+          <button type="button" class="widget btn glyphicon glyphicon-filter" id="filterButton" onclick="collapsible('filters');"></button>
+          <button type="button" class="widget btn glyphicon glyphicon-stats" id="graphButton" onclick="collapsible('graphs');"></button>
+          <button type="button" class="widget btn glyphicon glyphicon-usd" id="priceButton" onclick="collapsible('predict');"></button>
+        </div>
+      </div>
+      <div class="col-md-12" id="map"></div>
+    </div>
+    
+  </div>
+  
+
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./static/js/map.js"></script>
+  <script src="./static/js/dropDown.js"></script>
+  <script src="./static/js/collapsible.js"></script>
+  <script src="./static/js/filter.js"></script>
+  <script src="./static/js/scatter.js"></script>
+  <script src="./static/js/linear.js"></script>
+  <script src="./static/js/nn.js"></script>
+  <script src="./static/js/tableMakers.js"></script>
+  <script src="./static/js/predictPopulate.js"></script>
+  
+  
+
+</body>
+
+</html>

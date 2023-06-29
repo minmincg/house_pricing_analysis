@@ -6,14 +6,17 @@ function collapsible(section){
     if (d3.select(`#${section}`).style("width")=="0px"){
         sections.forEach(each=>{
             d3.select(`#${each}`).style("width",0);
+            d3.select(`#${each}`).style("height",0);
             d3.select(`#${each}`).style("marginLeft",0);
         });
         d3.select(`#${section}`).style("width","450px");
+        d3.select(`#${section}`).style("height","auto");
         d3.select(`#${section}`).style("marginLeft","20px");
 
     } else {
         console.log(`collapse ${section}`)
         d3.select(`#${section}`).style("width",0);
+        d3.select(`#${section}`).style("height",0);
         d3.select(`#${section}`).style("marginLeft",0);
     }
 }

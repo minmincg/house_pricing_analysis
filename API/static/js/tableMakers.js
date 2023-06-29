@@ -54,11 +54,8 @@ function tableMakerButtons(section,functionName,prefix){
     let table=document.querySelector(`#${section}`);
     let row=document.createElement("tr");
     row.innerHTML=`               
-    <td colspan="2" class="align-middle">
-      <button class="btn" type="button" id="${prefix}Go" onclick="${functionName}();"><span>Go</span> </button>
-    </td>
-    <td colspan="2" class="align-middle">
-      <button class="btn" type="button" id="${prefix}Clear" onclick="${functionName}()" disabled><span>Clear</span> </button>
+    <td colspan="4" class="align-middle">
+      <button class="btn btn-submit" type="button" id="${prefix}Go" onclick="${functionName}();"><span>Go</span> </button>
     </td>
 `
     table.appendChild(row);
